@@ -1,0 +1,94 @@
+/* ═══════════════════════════════════════
+   ABOUT.CSS — about.html
+   Airy editorial style — sky blue & white
+═══════════════════════════════════════ */
+
+body { background: #F0F7FF; }
+
+/* ── PAGE HERO ── */
+.page-hero {
+  background: linear-gradient(110deg, #1E3A8A 0%, #3B82F6 60%, #60A5FA 100%);
+  padding: 80px 24px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.page-hero::after {
+  content: '';
+  position: absolute; bottom: -2px; left: 0; right: 0; height: 60px;
+  background: #F0F7FF;
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+.page-hero .section-label { color: #BFDBFE; }
+.page-hero .section-title { color: white; font-size: clamp(2.2rem, 5vw, 3.5rem); }
+.page-hero .section-body  { color: #BFDBFE; margin: 0 auto; }
+
+/* ── INTRO STRIP ── */
+.intro-strip {
+  background: white;
+  padding: 64px 24px;
+}
+.intro-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+}
+.intro-grid .section-label { color: #3B82F6; }
+.intro-grid .section-title { color: #1E3A8A; }
+.intro-grid .section-body  { color: #4B5563; }
+.intro-visual {
+  background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+  border-radius: 20px; padding: 44px;
+  text-align: center; color: white;
+  position: relative; overflow: hidden;
+}
+.intro-visual::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 70%);
+}
+.intro-visual .big-emoji { font-size: 5rem; display: block; margin-bottom: 14px; position: relative; }
+.intro-visual h3 { font-family: 'Baloo 2', cursive; font-size: 1.5rem; font-weight: 800; position: relative; }
+.intro-visual p  { opacity: 0.82; margin-top: 8px; line-height: 1.6; font-size: 0.95rem; position: relative; }
+
+/* ── WHAT IS ADHD ── */
+.adhd-section {
+  background: #EFF6FF;
+  padding: 72px 24px;
+}
+.adhd-section .section-label { color: #3B82F6; }
+.adhd-section .section-title { color: #1E3A8A; }
+
+.adhd-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px; margin-top: 44px;
+}
+.adhd-card {
+  background: white; border-radius: 14px; padding: 28px 24px;
+  border-left: 4px solid #3B82F6;
+  box-shadow: 0 4px 20px rgba(59,130,246,0.08);
+  transition: transform 0.2s;
+}
+.adhd-card:hover { transform: translateY(-4px); }
+.adhd-card:nth-child(2) { border-color: #60A5FA; }
+.adhd-card:nth-child(3) { border-color: #93C5FD; }
+.adhd-card:nth-child(4) { border-color: #BFDBFE; }
+.adhd-card .card-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+.adhd-card h4 {
+  font-family: 'Baloo 2', cursive; font-size: 1rem; font-weight: 800;
+  color: #1E3A8A; margin-bottom: 6px;
+}
+.adhd-card p { color: #4B5563; font-size: 0.875rem; line-height: 1.65; }
+
+/* ── MISSION BANNER ── */
+.mission-banner {
+  background: #1E3A8A;
+  padding: 72px 24px; text-align: center;
+}
+.mission-banner h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800; color: white; max-width: 680px; margin: 0 auto 20px;
+  line-height: 1.25;
+}
+.mission-banner p { color: #93C5FD; max-width: 560px; margin: 0 auto 32px; line-height: 1.75; }
+
+@media (max-width: 768px) {
+  .intro-grid { grid-template-columns: 1fr; }
+}

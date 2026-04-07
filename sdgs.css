@@ -1,0 +1,104 @@
+/* ═══════════════════════════════════════
+   SDGS.CSS — sdgs.html
+   Bold dark UN-inspired, with themes too
+═══════════════════════════════════════ */
+
+body { background: #0F0E1A; }
+nav  { background: rgba(15,14,26,0.93) !important; border-color: #252340 !important; }
+.nav-logo, .nav-links a { color: #E0D9FF !important; }
+.nav-links a:hover, .nav-links a.active { background: #252340 !important; }
+
+/* ── PAGE HERO ── */
+.page-hero {
+  background: #0F0E1A;
+  padding: 88px 24px 72px; text-align: center;
+  border-bottom: 1px solid #1E1D38;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 500px 400px at 20% 50%, rgba(91,79,207,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 80% 50%, rgba(0,191,165,0.12) 0%, transparent 70%);
+}
+.page-hero .section-label { color: #818CF8; position: relative; }
+.page-hero .section-title { color: white; font-size: clamp(2.2rem, 5vw, 3.5rem); position: relative; }
+.page-hero .section-body  { color: #8B87A8; margin: 0 auto; position: relative; }
+
+/* ── SDG CARDS ── */
+.sdgs-section { padding: 80px 24px; background: #0F0E1A; }
+.sdgs-section .section-label { color: #818CF8; }
+.sdgs-section .section-title { color: white; }
+.sdgs-section .section-body  { color: #8B87A8; }
+
+.sdg-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 28px; margin-top: 52px;
+}
+.sdg-card {
+  border-radius: 20px; padding: 40px 30px;
+  text-align: center; border: 2px solid;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative; overflow: hidden;
+}
+.sdg-card:hover { transform: translateY(-6px); }
+.sdg-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 100%;
+  opacity: 0.04;
+  background: radial-gradient(circle at 50% 0%, white, transparent 70%);
+}
+
+.sdg-3  { background: rgba(0,191,165,0.08);  border-color: rgba(0,191,165,0.3); }
+.sdg-10 { background: rgba(244,63,94,0.08);   border-color: rgba(244,63,94,0.3); }
+.sdg-12 { background: rgba(251,191,36,0.08);  border-color: rgba(251,191,36,0.3); }
+
+.sdg-card:hover.sdg-3  { box-shadow: 0 20px 60px rgba(0,191,165,0.15); }
+.sdg-card:hover.sdg-10 { box-shadow: 0 20px 60px rgba(244,63,94,0.15); }
+.sdg-card:hover.sdg-12 { box-shadow: 0 20px 60px rgba(251,191,36,0.15); }
+
+.sdg-num {
+  font-family: 'Baloo 2', cursive;
+  font-size: 3.5rem; font-weight: 800; line-height: 1;
+  margin-bottom: 8px; position: relative;
+}
+.sdg-3  .sdg-num { color: #00BFA5; }
+.sdg-10 .sdg-num { color: #F43F5E; }
+.sdg-12 .sdg-num { color: #FBBF24; }
+
+.sdg-card h3 {
+  font-family: 'Baloo 2', cursive; font-size: 1.15rem;
+  color: white; margin-bottom: 12px; position: relative;
+}
+.sdg-card p { color: #8B87A8; font-size: 0.9rem; line-height: 1.7; position: relative; }
+
+/* ── THEMES SECTION ── */
+.themes-section { padding: 80px 24px; background: #13122A; }
+.themes-section .section-label { color: #818CF8; }
+.themes-section .section-title { color: white; }
+.themes-section .section-body  { color: #8B87A8; }
+
+.themes-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px;
+}
+.theme-card {
+  border-radius: 20px; padding: 40px;
+  border: 2px solid; display: flex; gap: 22px;
+  align-items: flex-start; transition: transform 0.25s;
+}
+.theme-card:hover { transform: translateY(-4px); }
+.theme-card.th1 { background: rgba(91,79,207,0.1);  border-color: rgba(91,79,207,0.3); }
+.theme-card.th2 { background: rgba(0,191,165,0.08); border-color: rgba(0,191,165,0.25); }
+.theme-emoji { font-size: 3rem; flex-shrink: 0; }
+.theme-card h3 {
+  font-family: 'Baloo 2', cursive; font-size: 1.15rem; font-weight: 800;
+  margin-bottom: 10px;
+}
+.theme-card.th1 h3 { color: #A78BFA; }
+.theme-card.th2 h3 { color: #2DD4BF; }
+.theme-card p { color: #8B87A8; font-size: 0.9rem; line-height: 1.7; }
+
+@media (max-width: 768px) {
+  .sdg-grid, .themes-grid { grid-template-columns: 1fr; }
+}

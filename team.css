@@ -1,0 +1,112 @@
+/* ═══════════════════════════════════════
+   TEAM.CSS — team.html
+   Warm, friendly, magazine portrait style
+═══════════════════════════════════════ */
+
+body { background: #FFFAF7; }
+
+/* ── PAGE HERO ── */
+.page-hero {
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 55%, #C084FC 100%);
+  padding: 80px 24px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.page-hero::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 60px;
+  background: #FFFAF7;
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+.page-hero .section-label { color: #EDE9FE; position: relative; }
+.page-hero .section-title { color: white; font-size: clamp(2.2rem, 5vw, 3.5rem); position: relative; }
+.page-hero .section-body  { color: #EDE9FE; margin: 0 auto; position: relative; }
+
+/* ── TEAM GRID ── */
+.team-section { padding: 80px 24px; background: #FFFAF7; }
+.team-section .section-label { color: #7C3AED; }
+.team-section .section-title { color: #3B0764; }
+.team-section .section-body  { color: #6B7280; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px; margin-top: 56px;
+}
+.team-card {
+  background: white;
+  border-radius: 20px;
+  border: 2px solid #F3E8FF;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.team-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 24px 60px rgba(124,58,237,0.14);
+}
+.team-card.is-mentor { border-color: #FFEDD5; }
+
+.team-img-wrap {
+  position: relative;
+  width: 100%; aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.team-img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.4s ease;
+}
+.team-card:hover .team-img { transform: scale(1.06); }
+
+.team-role-tag {
+  position: absolute; bottom: 12px; left: 12px;
+  font-size: 0.7rem; font-weight: 800; letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 13px; border-radius: 50px;
+  background: #7C3AED; color: white;
+}
+.is-mentor .team-role-tag { background: #EA580C; }
+
+.team-info { padding: 24px 22px; }
+.team-info h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.2rem; font-weight: 800;
+  color: #3B0764; margin-bottom: 8px;
+}
+.team-info p {
+  color: #6B7280; font-size: 0.875rem; line-height: 1.72;
+}
+
+/* ── MISSION BLOCK ── */
+.mission-block {
+  background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
+  border: 2px solid #DDD6FE;
+  border-radius: var(--radius);
+  padding: 44px 52px;
+  margin-top: 56px;
+  display: flex; gap: 28px; align-items: flex-start;
+}
+.mission-icon { font-size: 3rem; flex-shrink: 0; }
+.mission-block h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.4rem; color: #5B21B6; margin-bottom: 10px;
+}
+.mission-block p { color: #6B7280; line-height: 1.8; font-size: 1rem; }
+
+/* ── SCHOOL BANNER ── */
+.school-banner {
+  background: #7C3AED;
+  padding: 52px 24px; text-align: center;
+}
+.school-banner h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 8px;
+}
+.school-banner p { color: #DDD6FE; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+@media (max-width: 768px) {
+  .mission-block { flex-direction: column; padding: 28px; }
+}

@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════
+   BASE.CSS — Shared across all pages
+   Sparkie Buddy | Codeavour 7.0
+═══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary:  #5B4FCF;
+  --accent:   #FF7043;
+  --teal:     #00BFA5;
+  --dark:     #1A1340;
+  --gray:     #6B6880;
+  --white:    #FFFFFF;
+  --radius:   16px;
+  --nav-h:    64px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; color: var(--dark); overflow-x: hidden; }
+
+/* ── NAVBAR ── */
+nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,255,255,0.93);
+  backdrop-filter: blur(14px);
+  border-bottom: 2px solid #EDE9FF;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px;
+  height: var(--nav-h);
+}
+.nav-logo {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.45rem; font-weight: 800;
+  color: var(--primary); text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 2px; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: var(--dark);
+  font-weight: 700; font-size: 0.82rem;
+  padding: 7px 13px; border-radius: 50px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover,
+.nav-links a.active { background: #EDE9FF; color: var(--primary); }
+.nav-links a.nav-cta {
+  background: var(--primary); color: white;
+}
+.nav-links a.nav-cta:hover { background: #4a3fb5; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  color: #8B87A8;
+  text-align: center;
+  padding: 44px 24px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.footer-logo {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.5rem; font-weight: 800;
+  color: white; margin-bottom: 6px;
+  display: block;
+}
+.footer-logo span { color: var(--accent); }
+footer p { font-size: 0.85rem; line-height: 1.8; }
+footer strong { color: #C4B5FD; }
+
+/* ── COMMON UTILITIES ── */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.section-label {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 3px;
+  text-transform: uppercase; margin-bottom: 10px;
+  display: block;
+}
+.section-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 800; line-height: 1.2;
+  margin-bottom: 16px;
+}
+.section-body {
+  font-size: 1.05rem; line-height: 1.8;
+  max-width: 680px;
+}
+.btn {
+  padding: 13px 28px; border-radius: 50px;
+  font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 0.95rem;
+  text-decoration: none; display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer; border: none;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.btn-primary { background: var(--accent); color: white; }
+.btn-outline { background: rgba(255,255,255,0.12); color: white; border: 2px solid rgba(255,255,255,0.35); }
+.btn-purple { background: var(--primary); color: white; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 18px; }
+  .nav-links { display: none; }
+}

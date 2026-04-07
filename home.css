@@ -1,0 +1,126 @@
+/* ═══════════════════════════════════════
+   HOME.CSS — index.html
+   Deep space gradient hero, floating orbs
+═══════════════════════════════════════ */
+
+body { background: #0D0B1E; }
+
+/* ── HERO ── */
+#hero {
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #0D0B1E 0%, #2A2480 55%, #5B4FCF 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 80px 24px;
+  position: relative; overflow: hidden;
+}
+.orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(90px); opacity: 0.3;
+  animation: drift 7s ease-in-out infinite;
+}
+.orb-1 { width: 420px; height: 420px; background: #FF7043; top: -120px; right: -80px; }
+.orb-2 { width: 320px; height: 320px; background: #00BFA5; bottom: -100px; left: -80px; animation-delay: 3.5s; }
+.orb-3 { width: 180px; height: 180px; background: #A78BFA; top: 45%; left: 8%; animation-delay: 1.8s; }
+@keyframes drift {
+  0%,100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-22px) scale(1.06); }
+}
+
+.hero-inner { position: relative; z-index: 2; max-width: 780px; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #D4C9FF; font-size: 0.78rem; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 7px 20px; border-radius: 50px;
+  margin-bottom: 28px;
+  animation: riseUp 0.7s ease both;
+}
+
+.hero-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  font-weight: 800; line-height: 1.08;
+  color: #fff; margin-bottom: 20px;
+  animation: riseUp 0.7s ease 0.1s both;
+}
+.hero-title em { font-style: normal; color: #FFA07A; }
+
+.hero-sub {
+  font-size: 1.15rem; color: #B8ACFF;
+  line-height: 1.75; max-width: 560px;
+  margin: 0 auto 40px;
+  animation: riseUp 0.7s ease 0.2s both;
+}
+.hero-btns {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  animation: riseUp 0.7s ease 0.3s both;
+}
+
+/* ── STATS ROW ── */
+.stats-row {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 24px; padding: 48px 24px;
+  background: #11102A;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.stat {
+  text-align: center; padding: 24px;
+}
+.stat-num {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.8rem; font-weight: 800;
+  color: #A78BFA; line-height: 1;
+}
+.stat-label { color: #6B6880; font-size: 0.85rem; margin-top: 6px; font-weight: 600; }
+
+/* ── NAV CARDS (quick links to pages) ── */
+.page-cards {
+  padding: 80px 24px;
+  background: #0D0B1E;
+}
+.page-cards-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.8rem; font-weight: 800;
+  color: white; text-align: center; margin-bottom: 10px;
+}
+.page-cards-sub {
+  text-align: center; color: #6B6880; margin-bottom: 48px; font-size: 0.95rem;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; max-width: 1080px; margin: 0 auto;
+}
+.page-card {
+  background: #16143A;
+  border: 2px solid #2A2868;
+  border-radius: var(--radius);
+  padding: 32px 24px; text-align: center;
+  text-decoration: none; color: white;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  display: block;
+}
+.page-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 16px 48px rgba(91,79,207,0.25);
+}
+.page-card-icon { font-size: 2.6rem; margin-bottom: 14px; display: block; }
+.page-card h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.05rem; font-weight: 800; margin-bottom: 6px;
+}
+.page-card p { color: #6B6880; font-size: 0.82rem; line-height: 1.5; }
+
+@keyframes riseUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .stats-row { grid-template-columns: 1fr; }
+}
