@@ -11,7 +11,10 @@
 
 <nav>
   <a href="index.html" class="nav-logo"><img src="image.png" alt="Sparkie Buddy Logo" style="width: 100px; height: auto;"></a>
-  <ul class="nav-links">
+  <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="home.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="problem-solution.html">Problem & Solution</a></li>
@@ -112,5 +115,22 @@
   <p style="margin-top:10px;">Copyright © 2025 Sparkie Buddy Team — All Rights Reserved.</p>
 </footer>
 
+<script>
+  var toggle = document.getElementById("navToggle");
+  var links = document.getElementById("navLinks");
+  if (toggle) {
+    toggle.addEventListener("click", function() {
+      toggle.classList.toggle("open");
+      links.classList.toggle("open");
+    });
+    // Close when a link is clicked
+    links.querySelectorAll("a").forEach(function(a) {
+      a.addEventListener("click", function() {
+        toggle.classList.remove("open");
+        links.classList.remove("open");
+      });
+    });
+  }
+</script>
 </body>
 </html>
