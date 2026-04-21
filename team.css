@@ -1,11 +1,5 @@
-/* ═══════════════════════════════════════
-   TEAM.CSS — team.html
-   Warm, friendly, magazine portrait style
-═══════════════════════════════════════ */
-
 body { background: #FFFAF7; }
 
-/* ── PAGE HERO ── */
 .page-hero {
   background: linear-gradient(135deg, #7C3AED 0%, #A855F7 55%, #C084FC 100%);
   padding: 80px 24px; text-align: center;
@@ -33,7 +27,7 @@ body { background: #FFFAF7; }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px; margin-top: 56px;
 }
 .team-card {
@@ -109,4 +103,5 @@ body { background: #FFFAF7; }
 
 @media (max-width: 768px) {
   .mission-block { flex-direction: column; padding: 28px; }
+  .team-grid { grid-template-columns: 1fr; }
 }
